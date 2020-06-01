@@ -40,7 +40,7 @@ function setup(){
     log4 = new Log(760,120,150, PI/7);
     log5 = new Log(870,120,150, -PI/7);
 
-    bird = new Bird(200,50);
+    bird = new Human(200,50);
 
     //log6 = new Log(230,180,80, PI/2);
     slingshot = new SlingShot(bird.body,{x:200, y:50});
@@ -92,7 +92,7 @@ function keyPressed(){
 }
 
 async function getBackImg(){
-var response= await fetch("http://worldtimeapi.org/api/timezone/America/Anchorage");
+var response= await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata");
 var JSon= await response.json();
 
 var Dt=JSon.datetime;
@@ -100,10 +100,10 @@ var Dt=JSon.datetime;
 var hour= Dt.slice(11,13);
 
 if(hour>6 && hour<18){
-  bg="sprites/bg.png" ;
+  bg="sprites/school.jpg" ;
 }
 else{
-    bg="sprites/bg2.jpg"
+    bg="sprites/work.jpg"
 }
 backgroundImg=loadImage(bg);
 
